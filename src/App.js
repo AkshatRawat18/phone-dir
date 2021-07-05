@@ -2,25 +2,29 @@ import React, { Component } from "react";
 import Header from "./Header"
 import "./App.css"
 
-class App extends Component {
-  clickHandler(message){
-    alert(message);
-  }
+// let subscribers=[
+//   {
+//     id:1,
+//     name:"Akshat",
+//     phone:"00000000"
+//   },
+//   {
+//     id:2,
+//     name:"Riya",
+//     phone:"11111111"
+//   }
+// ]
 
+class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      subscribersListToShow: []
+    }
+  }
   
   render() {
-    let subscribers=[
-      {
-        id:1,
-        name:"Akshat",
-        phone:"00000000"
-      },
-      {
-        id:2,
-        name:"Riya",
-        phone:"11111111"
-      }
-    ]
+    
    
     return (
       <div className="component-container">
@@ -33,7 +37,7 @@ class App extends Component {
           </div>  
 
           {
-            subscribers.map(sub=>{
+            this.state.subscribersListToShow.map(sub=>{
               return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
