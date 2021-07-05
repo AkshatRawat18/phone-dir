@@ -3,7 +3,7 @@ import './Header.css'
 const Header=function(props){
     
     return(
-        <div className="header">props.heading</div>
+        <div className="header">Add Subscriber</div>
 
     )
 }
